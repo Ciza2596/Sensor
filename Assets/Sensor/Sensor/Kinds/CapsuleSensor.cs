@@ -9,12 +9,12 @@ namespace Sensor
 {
     public class CapsuleSensor : ISensor
     {
-        //private
+        //private variable
         [SerializeField]
         private Setting _setting = new Setting();
 
 
-        //public
+        //public method
 
         public override ISetting GetSetting()                 => _setting;
         public override void     SetSetting(ISetting setting) => _setting = (Setting) setting;
@@ -47,7 +47,7 @@ namespace Sensor
         }
         
 
-        //protected
+        //protected method
         protected override void DrawGizmos(Vector3 selfPosition, Quaternion selfLocalRotation, Vector3 selfLocalScale) {
             Matrix4x4 rotationMatrix = Matrix4x4.TRS(selfPosition, selfLocalRotation, selfLocalScale);
             Gizmos.matrix = rotationMatrix;
@@ -60,7 +60,7 @@ namespace Sensor
         }
 
 
-        //private
+        //private method
         private void UpdateContents(Vector3            point,
                                     LayerMask          layerMask,
                                     CapsuleDirection2D capsuleDirection2D,

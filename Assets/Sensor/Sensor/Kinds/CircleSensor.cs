@@ -5,13 +5,13 @@ namespace Sensor
 {
     public class CircleSensor : ISensor
     {
-        //private
+        //private variable
         
         [SerializeField]
         private Setting _setting = new Setting();
         
         
-        //public
+        //public method
 
         public override ISetting GetSetting() => _setting;
 
@@ -27,7 +27,7 @@ namespace Sensor
         }
         
 
-        //protected
+        //protected method
         
         protected override void DrawGizmos(Vector3 selfPosition, Quaternion selfLocalRotation, Vector3 selfLocalScale) {
             Matrix4x4 rotationMatrix = Matrix4x4.TRS(selfPosition, selfLocalRotation, selfLocalScale);
@@ -39,7 +39,7 @@ namespace Sensor
         }
 
         
-        //private
+        //private method
         private void UpdateContents(Vector3   point,
                                     LayerMask layerMask,
                                     float     radius) {
@@ -49,18 +49,17 @@ namespace Sensor
         }
         
         //model
-
         [Serializable]
         public class Setting : ISetting
         {
-            //private
+            //private variable
             [SerializeField]
             private LayerMask _layerMask;
 
             private float _radius = 0.5f;
             
             
-            //public
+            //public variable
             public Setting() { }
 
             public Setting(LayerMask layerMask) {

@@ -4,14 +4,11 @@ using UnityEngine;
 namespace Sensor {
     public class SensorExecutor : MonoBehaviour {
 
-        //private
+        //private variable
         [SerializeField]
         private List<ISensor> _sensors = new List<ISensor>();
 
-        public void AddSensor(ISensor sensor) => _sensors.Add(sensor);
-        
-        public void RemoveSensor(ISensor sensor) => _sensors.Remove(sensor);
-        
+        //unity callback
         private void FixedUpdate() {
             var fixedDeltaTime = Time.fixedDeltaTime;
             
@@ -23,5 +20,11 @@ namespace Sensor {
                     sensor.OnFixedUpdate(fixedDeltaTime);
             }
         }
+
+
+        //public method
+        public void AddSensor(ISensor sensor) => _sensors.Add(sensor);
+        
+        public void RemoveSensor(ISensor sensor) => _sensors.Remove(sensor);
     }
 }
