@@ -1,4 +1,4 @@
-# Sensor
+# CilixEngine.Sensor
 
 ## Add package from git URL
 ```
